@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Sakshi Kusmude</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>body{cursor:none;}</style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">SK<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="experience.html">experience</a></li>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="skills.html">skills</a></li>
+      <li><a href="gallery.html">gallery</a></li>
+      <li><a href="contact.html" class="active nav-cta">contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <main class="page">
+    <section class="section">
+      <div class="container">
+        <div class="section-label">06 — contact</div>
+        <h2 class="section-title">Let's <em>connect</em></h2>
+        <p class="section-desc">I'm actively looking for full-time opportunities in data engineering and data science. Whether you have a role, a project idea, or just want to say hi — my inbox is always open.</p>
+
+        <div class="contact-layout">
+
+          <!-- LEFT — INFO -->
+          <div class="fade-up">
+            <div class="contact-info-card">
+              <div class="contact-detail">
+                <div class="cd-icon">📧</div>
+                <div>
+                  <div class="cd-label">Email</div>
+                  <a href="mailto:sakshikusmude699@gmail.com" class="cd-value">sakshikusmude699@gmail.com</a>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="cd-icon">📞</div>
+                <div>
+                  <div class="cd-label">Phone</div>
+                  <a href="tel:+918080613066" class="cd-value">+91-8080613066</a>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="cd-icon">📍</div>
+                <div>
+                  <div class="cd-label">Location</div>
+                  <span class="cd-value">Pune, Maharashtra, India</span>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="cd-icon">💼</div>
+                <div>
+                  <div class="cd-label">LinkedIn</div>
+                  <a href="https://linkedin.com/in/sakshi-kusmude-2bb57525a" target="_blank" class="cd-value">sakshi-kusmude-2bb57525a</a>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="cd-icon">🐙</div>
+                <div>
+                  <div class="cd-label">GitHub</div>
+                  <a href="https://github.com" target="_blank" class="cd-value">github.com/sakshikusmude</a>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
+              <div class="cd-label" style="margin-bottom:0.8rem;">Currently looking for</div>
+              <div class="tech-tags">
+                <span>Data Engineer</span>
+                <span>Data Scientist</span>
+                <span>ML Engineer</span>
+                <span>Analytics Engineer</span>
+                <span>BI Developer</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT — FORM -->
+          <div class="fade-up">
+            <div class="contact-form">
+              <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                  <label class="form-label" for="name">Your Name</label>
+                  <input class="form-input" id="name" name="name" type="text" placeholder="John Doe" required/>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Email Address</label>
+                  <input class="form-input" id="email" name="email" type="email" placeholder="john@company.com" required/>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="subject">Subject</label>
+                  <input class="form-input" id="subject" name="subject" type="text" placeholder="Job opportunity / Collaboration / Just saying hi"/>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="message">Message</label>
+                  <textarea class="form-textarea" id="message" name="message" placeholder="Tell me about your opportunity or project..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Send Message ✉️</button>
+              </form>
+              <p style="font-family:var(--mono);font-size:0.68rem;color:var(--text3);margin-top:1rem;text-align:center;">
+                💡 To enable real email delivery, sign up at <a href="https://formspree.io" target="_blank" style="color:var(--accent);">formspree.io</a> and replace YOUR_FORM_ID
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Designed & built by <strong>Sakshi Kusmude</strong> &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; <a href="https://linkedin.com/in/sakshi-kusmude-2bb57525a" target="_blank">LinkedIn</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

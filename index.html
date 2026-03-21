@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sakshi Kusmude — Data Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body { cursor: none; }
+    .hero-right { position: absolute; right: 3.5rem; top: 50%; transform: translateY(-50%); z-index: 2; display: flex; flex-direction: column; gap: 1rem; }
+    .quick-link { display: flex; align-items: center; gap: 0.7rem; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--text3); text-decoration: none; transition: color 0.2s; writing-mode: horizontal-tb; }
+    .quick-link:hover { color: var(--accent); }
+    .ql-line { width: 30px; height: 1px; background: currentColor; }
+    @media (max-width: 900px) { .hero-right { display: none; } }
+
+    /* mini about strip */
+    .strip { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 2.5rem 0; overflow: hidden; }
+    .strip-inner { display: flex; gap: 4rem; animation: marquee 18s linear infinite; width: max-content; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .strip-item { display: flex; align-items: center; gap: 0.6rem; font-family: var(--mono); font-size: 0.75rem; color: var(--text3); letter-spacing: 0.1em; white-space: nowrap; }
+    .strip-dot { width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+
+    /* featured section */
+    .featured-section { padding: 5rem 0; background: var(--bg2); }
+    .featured-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .feat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.8rem; text-decoration: none; transition: all 0.3s; display: block; }
+    .feat-card:hover { border-color: var(--border2); transform: translateY(-3px); box-shadow: var(--glow); }
+    .feat-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .feat-title { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .feat-desc { font-size: 0.85rem; color: var(--text2); line-height: 1.7; }
+    .feat-arrow { display: inline-block; margin-top: 1rem; font-family: var(--mono); font-size: 0.72rem; color: var(--accent); }
+    @media (max-width: 900px) { .featured-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">SK<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="experience.html">experience</a></li>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="skills.html">skills</a></li>
+      <li><a href="gallery.html">gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <main class="page">
+    <section class="hero">
+      <canvas id="particleCanvas"></canvas>
+      <div class="hero-grid-bg"></div>
+      <div class="hero-content">
+        <div class="hero-tag"><span class="dot"></span> Open to full-time opportunities · 2026</div>
+        <h1 class="hero-name">Sakshi<br/><em>Kusmude</em></h1>
+        <p class="hero-role"><span id="typed-role">Data Engineer</span><span class="cursor-blink"></span></p>
+        <p class="hero-desc">Building intelligent data systems — scalable ETL pipelines, ML-powered applications, and clean BI dashboards. Final year B.Tech IT at VIIT, Pune.</p>
+        <div class="hero-actions">
+          <a href="projects.html" class="btn btn-primary">View Projects</a>
+          <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">8.34</span><span class="stat-label">CGPA</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Internships</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">14+</span><span class="stat-label">Certifications</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">4+</span><span class="stat-label">Projects</span></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <a href="https://linkedin.com/in/sakshi-kusmude-2bb57525a" target="_blank" class="quick-link"><span class="ql-line"></span> LinkedIn</a>
+        <a href="https://github.com" target="_blank" class="quick-link"><span class="ql-line"></span> GitHub</a>
+        <a href="mailto:sakshikusmude699@gmail.com" class="quick-link"><span class="ql-line"></span> Email</a>
+      </div>
+      <div class="scroll-hint"><span>scroll</span><div class="scroll-line"></div></div>
+    </section>
+
+    <!-- MARQUEE STRIP -->
+    <div class="strip">
+      <div class="strip-inner">
+        <span class="strip-item"><span class="strip-dot"></span> Python</span>
+        <span class="strip-item"><span class="strip-dot"></span> Snowflake</span>
+        <span class="strip-item"><span class="strip-dot"></span> Apache Airflow</span>
+        <span class="strip-item"><span class="strip-dot"></span> Google Cloud Platform</span>
+        <span class="strip-item"><span class="strip-dot"></span> Machine Learning</span>
+        <span class="strip-item"><span class="strip-dot"></span> ETL Pipelines</span>
+        <span class="strip-item"><span class="strip-dot"></span> Data Engineering</span>
+        <span class="strip-item"><span class="strip-dot"></span> React Native</span>
+        <span class="strip-item"><span class="strip-dot"></span> TensorFlow</span>
+        <span class="strip-item"><span class="strip-dot"></span> SQL</span>
+        <span class="strip-item"><span class="strip-dot"></span> DOMO</span>
+        <span class="strip-item"><span class="strip-dot"></span> Tableau</span>
+        <!-- duplicate for seamless loop -->
+        <span class="strip-item"><span class="strip-dot"></span> Python</span>
+        <span class="strip-item"><span class="strip-dot"></span> Snowflake</span>
+        <span class="strip-item"><span class="strip-dot"></span> Apache Airflow</span>
+        <span class="strip-item"><span class="strip-dot"></span> Google Cloud Platform</span>
+        <span class="strip-item"><span class="strip-dot"></span> Machine Learning</span>
+        <span class="strip-item"><span class="strip-dot"></span> ETL Pipelines</span>
+        <span class="strip-item"><span class="strip-dot"></span> Data Engineering</span>
+        <span class="strip-item"><span class="strip-dot"></span> React Native</span>
+        <span class="strip-item"><span class="strip-dot"></span> TensorFlow</span>
+        <span class="strip-item"><span class="strip-dot"></span> SQL</span>
+        <span class="strip-item"><span class="strip-dot"></span> DOMO</span>
+        <span class="strip-item"><span class="strip-dot"></span> Tableau</span>
+      </div>
+    </div>
+
+    <!-- FEATURED CARDS -->
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-label">explore</div>
+        <h2 class="section-title">Quick <em>navigation</em></h2>
+        <div class="featured-grid">
+          <a href="about.html" class="feat-card fade-up">
+            <div class="feat-icon">👩‍💻</div>
+            <div class="feat-title">About Me</div>
+            <div class="feat-desc">My background, education, and what drives me as a data engineer.</div>
+            <div class="feat-arrow">View →</div>
+          </a>
+          <a href="experience.html" class="feat-card fade-up">
+            <div class="feat-icon">🏢</div>
+            <div class="feat-title">Experience</div>
+            <div class="feat-desc">Internships at Colgate, Xact Innovation & JAASN Consultants.</div>
+            <div class="feat-arrow">View →</div>
+          </a>
+          <a href="projects.html" class="feat-card fade-up">
+            <div class="feat-icon">🚀</div>
+            <div class="feat-title">Projects</div>
+            <div class="feat-desc">4 projects spanning data engineering, ML, NLP & mobile AI.</div>
+            <div class="feat-arrow">View →</div>
+          </a>
+          <a href="skills.html" class="feat-card fade-up">
+            <div class="feat-icon">⚡</div>
+            <div class="feat-title">Skills & Certs</div>
+            <div class="feat-desc">14+ certifications from AWS, IBM, Coursera, Udemy & more.</div>
+            <div class="feat-arrow">View →</div>
+          </a>
+          <a href="gallery.html" class="feat-card fade-up">
+            <div class="feat-icon">📸</div>
+            <div class="feat-title">Gallery</div>
+            <div class="feat-desc">Photos from internships, events, hackathons & college life.</div>
+            <div class="feat-arrow">View →</div>
+          </a>
+          <a href="contact.html" class="feat-card fade-up">
+            <div class="feat-icon">✉️</div>
+            <div class="feat-title">Contact</div>
+            <div class="feat-desc">Open to full-time roles in data engineering & data science.</div>
+            <div class="feat-arrow">Say Hello →</div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Designed & built by <strong>Sakshi Kusmude</strong> &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; <a href="https://linkedin.com/in/sakshi-kusmude-2bb57525a" target="_blank">LinkedIn</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

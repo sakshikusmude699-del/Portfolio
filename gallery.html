@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery — Sakshi Kusmude</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body { cursor: none; }
+    /* lightbox */
+    .lightbox { position: fixed; inset: 0; background: rgba(7,11,15,0.96); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; backdrop-filter: blur(10px); }
+    .lightbox.open { opacity: 1; pointer-events: all; }
+    .lightbox-img { max-width: 88vw; max-height: 85vh; border-radius: 10px; border: 1px solid var(--border2); box-shadow: var(--glow-strong); }
+    .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; font-family: var(--mono); font-size: 1.5rem; color: var(--text2); cursor: pointer; transition: color 0.2s; background: none; border: none; }
+    .lightbox-close:hover { color: var(--accent); }
+    .lightbox-caption { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 0.75rem; color: var(--text2); white-space: nowrap; }
+
+    /* placeholder cards */
+    .ph-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); aspect-ratio: 4/3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.7rem; color: var(--text3); transition: all 0.3s; }
+    .ph-card:hover { border-color: var(--border2); }
+    .ph-tag { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--text3); text-align: center; padding: 0 1rem; }
+    .ph-emoji { font-size: 2rem; }
+
+    /* gallery filters */
+    .gallery-filter { display: flex; gap: 0.6rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">SK<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="experience.html">experience</a></li>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="skills.html">skills</a></li>
+      <li><a href="gallery.html" class="active">gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <main class="page">
+    <section class="section">
+      <div class="container">
+        <div class="section-label">05 — gallery</div>
+        <h2 class="section-title">Life in <em>frames</em></h2>
+        <p class="gallery-intro">A collection of moments from internships, college events, hackathons, and everyday life.</p>
+
+        <!-- GALLERY GRID -->
+        <div class="gallery-grid" id="galleryGrid">
+
+          <div class="gallery-item">
+            <img src="images/Interns Day at Colgate.jpeg" alt="Interns Day at Colgate" />
+            <div class="gallery-overlay"><span class="gallery-caption">Interns Day at Colgate</span></div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/Industry Project Visit.jpeg" alt="Industry Project Visit" />
+            <div class="gallery-overlay"><span class="gallery-caption">Industry Project Visit</span></div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/GFG hackathon.jpeg" alt="GFG Hackathon" />
+            <div class="gallery-overlay"><span class="gallery-caption">GFG Hackathon</span></div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/GFG hackathon at college.jpeg" alt="GFG Hackathon at College" />
+            <div class="gallery-overlay"><span class="gallery-caption">GFG Hackathon at College</span></div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/GFG hackathon 1.jpeg" alt="GFG Hackathon Group" />
+            <div class="gallery-overlay"><span class="gallery-caption">GFG Hackathon Group</span></div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/Ignite Hackathon at colgate.jpeg" alt="Ignite Hackathon at Colgate" />
+            <div class="gallery-overlay"><span class="gallery-caption">Ignite Hackathon at Colgate</span></div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/NSS helpin to orphan childs to perform on stage.jpeg" alt="NSS Orphanage Event" />
+            <div class="gallery-overlay"><span class="gallery-caption">NSS Orphanage Event</span></div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/sinhgad Trek.jpeg" alt="Sinhgad Trek" />
+            <div class="gallery-overlay"><span class="gallery-caption">Sinhgad Trek</span></div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/Trekking Purandar.jpeg" alt="Trekking Purandar" />
+            <div class="gallery-overlay"><span class="gallery-caption">Trekking Purandar</span></div>
+          </div>
+
+        </div>
+
+        <p style="font-family:var(--mono);font-size:0.72rem;color:var(--text3);margin-top:2rem;text-align:center;">
+          📌 Click any photo to view it in full-screen lightbox mode
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt=""/>
+    <span class="lightbox-caption" id="lightboxCaption"></span>
+  </div>
+
+  <footer class="footer">
+    <p>Designed & built by <strong>Sakshi Kusmude</strong> &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; <a href="https://linkedin.com/in/sakshi-kusmude-2bb57525a" target="_blank">LinkedIn</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const lbCaption = document.getElementById('lightboxCaption');
+    document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        if (img) { lbImg.src = img.src; lbCaption.textContent = img.alt || ''; lightbox.classList.add('open'); }
+      });
+    });
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Sakshi Kusmude</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>body{cursor:none;}</style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">SK<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="experience.html">experience</a></li>
+      <li><a href="projects.html" class="active">projects</a></li>
+      <li><a href="skills.html">skills</a></li>
+      <li><a href="gallery.html">gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <main class="page">
+    <section class="section">
+      <div class="container">
+        <div class="section-label">03 — projects</div>
+        <h2 class="section-title">Things I've <em>built</em></h2>
+
+        <div class="projects-filter">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ml">ML / AI</button>
+          <button class="filter-btn" data-filter="data">Data Science</button>
+          <button class="filter-btn" data-filter="app">Applications</button>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- SmartHear -->
+          <div class="project-card featured fade-up" data-category="ml">
+            <div class="project-glow" style="background:radial-gradient(circle, rgba(0,255,153,0.07), transparent 70%);"></div>
+            <div class="project-badge">Featured</div>
+            <div class="project-number">01</div>
+            <div class="project-icon">👂</div>
+            <h3 class="project-title">SmartHear — AI Hearing Assistance App</h3>
+            <p class="project-desc">
+              Real-time AI-based hearing assistance mobile app using React Native, TensorFlow Lite, and DSP techniques. 
+              Enables noise suppression and speech enhancement with low-latency audio processing and on-device AI inference.
+            </p>
+            <ul style="list-style:none;margin-bottom:1rem;">
+              <li style="font-size:0.83rem;color:var(--text2);padding:0.4rem 0 0.4rem 1.2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--border);"><span style="position:absolute;left:0;color:var(--accent2);">▸</span> User-specific frequency calibration & adaptive sound optimization</li>
+              <li style="font-size:0.83rem;color:var(--text2);padding:0.4rem 0 0.4rem 1.2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--border);"><span style="position:absolute;left:0;color:var(--accent2);">▸</span> C/C++ RNNoise integration for real-time noise suppression</li>
+              <li style="font-size:0.83rem;color:var(--text2);padding:0.4rem 0 0 1.2rem;position:relative;line-height:1.6;"><span style="position:absolute;left:0;color:var(--accent2);">▸</span> Python model training + JavaScript + TFLite on-device inference</li>
+            </ul>
+            <div class="tech-tags">
+              <span>React Native</span><span>TensorFlow Lite</span><span>DSP</span><span>Python</span><span>C/C++</span><span>RNNoise</span><span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com" target="_blank" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                Code
+              </a>
+            </div>
+          </div>
+
+          <!-- Crime Analysis -->
+          <div class="project-card fade-up" data-category="data">
+            <div class="project-glow"></div>
+            <div class="project-number">02</div>
+            <div class="project-icon">📊</div>
+            <h3 class="project-title">Crime Against Women Analysis — India</h3>
+            <p class="project-desc">
+              End-to-end data science project uncovering crime trends across Indian districts using large-scale 
+              government datasets, geospatial visualization, and clustering techniques.
+            </p>
+            <ul style="list-style:none;margin-bottom:1rem;">
+              <li style="font-size:0.83rem;color:var(--text2);padding:0.4rem 0 0.4rem 1.2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--border);"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Cleaned & preprocessed large-scale dataset with Pandas (missing values, outliers, standardization)</li>
+              <li style="font-size:0.83rem;color:var(--text2);padding:0.4rem 0 0.4rem 1.2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--border);"><span style="position:absolute;left:0;color:var(--accent);">▸</span> EDA + statistical analysis to uncover trends, correlations & high-risk regions</li>
+              <li style="font-size:0.83rem;color:var(--text2);padding:0.4rem 0 0.4rem 1.2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--border);"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Feature engineering (quantile-based binning) + clustering for categorization</li>
+              <li style="font-size:0.83rem;color:var(--text2);padding:0.4rem 0 0 1.2rem;position:relative;line-height:1.6;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Interactive geospatial dashboards via GeoPandas & Folium for district-wise visualization</li>
+            </ul>
+            <div class="tech-tags">
+              <span>Python</span><span>Pandas</span><span>GeoPandas</span><span>Folium</span><span>EDA</span><span>Clustering</span><span>Matplotlib</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com" target="_blank" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                Code
+              </a>
+            </div>
+          </div>
+
+          <!-- TB Detection -->
+          <div class="project-card fade-up" data-category="ml">
+            <div class="project-glow"></div>
+            <div class="project-number">03</div>
+            <div class="project-icon">🫁</div>
+            <h3 class="project-title">Tuberculosis Detection System</h3>
+            <p class="project-desc">
+              End-to-end data-driven application for TB detection from chest X-ray images. 
+              CNN-based model with OpenCV preprocessing pipelines, deployed via Flask web application.
+            </p>
+            <ul style="list-style:none;margin-bottom:1rem;">
+              <li style="font-size:0.83rem;color:var(--text2);padding:0.4rem 0 0.4rem 1.2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--border);"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Built & trained CNN model for binary classification on chest X-ray images</li>
+              <li style="font-size:0.83rem;color:var(--text2);padding:0.4rem 0 0 1.2rem;position:relative;line-height:1.6;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Deployed model inference via Flask REST API with real-time predictions</li>
+            </ul>
+            <div class="tech-tags">
+              <span>Python</span><span>Flask</span><span>CNN</span><span>OpenCV</span><span>Deep Learning</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com" target="_blank" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                Code
+              </a>
+            </div>
+          </div>
+
+          <!-- Medical Tourism -->
+          <div class="project-card fade-up" data-category="app">
+            <div class="project-glow"></div>
+            <div class="project-number">04</div>
+            <div class="project-icon">🏥</div>
+            <h3 class="project-title">Medical Tourism Analytics Platform</h3>
+            <p class="project-desc">
+              Data-backed platform helping users identify suitable medical services based on structured inputs,
+              with an integrated NLP chatbot for intelligent dataset queries and recommendations.
+            </p>
+            <ul style="list-style:none;margin-bottom:1rem;">
+              <li style="font-size:0.83rem;color:var(--text2);padding:0.4rem 0 0.4rem 1.2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--border);"><span style="position:absolute;left:0;color:var(--accent);">▸</span> NLP chatbot queries datasets to provide personalized medical service recommendations</li>
+              <li style="font-size:0.83rem;color:var(--text2);padding:0.4rem 0 0 1.2rem;position:relative;line-height:1.6;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Flask back-end with analytics engine processing structured user inputs</li>
+            </ul>
+            <div class="tech-tags">
+              <span>Python</span><span>Flask</span><span>NLP</span><span>Analytics</span><span>Data Science</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com" target="_blank" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                Code
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Designed & built by <strong>Sakshi Kusmude</strong> &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; <a href="https://linkedin.com/in/sakshi-kusmude-2bb57525a" target="_blank">LinkedIn</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
