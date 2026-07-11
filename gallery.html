@@ -4,23 +4,16 @@
   <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery — Sakshi Kusmude</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
   <style>
-    body { cursor: none; }
     /* lightbox */
-    .lightbox { position: fixed; inset: 0; background: rgba(7,11,15,0.96); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; backdrop-filter: blur(10px); }
+    .lightbox { position: fixed; inset: 0; background: rgba(10,14,22,0.96); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; backdrop-filter: blur(10px); }
     .lightbox.open { opacity: 1; pointer-events: all; }
     .lightbox-img { max-width: 88vw; max-height: 85vh; border-radius: 10px; border: 1px solid var(--border2); box-shadow: var(--glow-strong); }
     .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; font-family: var(--mono); font-size: 1.5rem; color: var(--text2); cursor: pointer; transition: color 0.2s; background: none; border: none; }
     .lightbox-close:hover { color: var(--accent); }
     .lightbox-caption { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 0.75rem; color: var(--text2); white-space: nowrap; }
-
-    /* placeholder cards */
-    .ph-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); aspect-ratio: 4/3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.7rem; color: var(--text3); transition: all 0.3s; }
-    .ph-card:hover { border-color: var(--border2); }
-    .ph-tag { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--text3); text-align: center; padding: 0 1rem; }
-    .ph-emoji { font-size: 2rem; }
 
     /* gallery filters */
     .gallery-filter { display: flex; gap: 0.6rem; margin-bottom: 2rem; flex-wrap: wrap; }
@@ -99,7 +92,7 @@
         </div>
 
         <p style="font-family:var(--mono);font-size:0.72rem;color:var(--text3);margin-top:2rem;text-align:center;">
-          📌 Click any photo to view it in full-screen lightbox mode
+          Click any photo to view it in full-screen lightbox mode
         </p>
       </div>
     </section>
@@ -107,7 +100,7 @@
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
     <img class="lightbox-img" id="lightboxImg" src="" alt=""/>
     <span class="lightbox-caption" id="lightboxCaption"></span>
   </div>

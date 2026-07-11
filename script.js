@@ -1,15 +1,3 @@
-// ===== CURSOR =====
-const cursor = document.createElement('div'); cursor.className = 'cursor';
-const ring = document.createElement('div'); ring.className = 'cursor-ring';
-document.body.appendChild(cursor); document.body.appendChild(ring);
-let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.cssText = `left:${mx-5}px;top:${my-5}px`; });
-(function animRing() { rx += (mx - rx - 16) * 0.13; ry += (my - ry - 16) * 0.13; ring.style.cssText = `left:${rx}px;top:${ry}px`; requestAnimationFrame(animRing); })();
-document.querySelectorAll('a,button,input,textarea,.filter-btn,.gallery-item').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(2.5)');
-  el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
-});
-
 // ===== NAV =====
 const nav = document.getElementById('nav');
 if (nav) window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
@@ -110,8 +98,6 @@ if (uploadInput && galleryGrid) {
         item.classList.add('fade-up');
         setTimeout(() => item.classList.add('visible'), 50);
         io.observe(item);
-        item.addEventListener('mouseenter', () => cursor.style.transform = 'scale(2.5)');
-        item.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
       };
       reader.readAsDataURL(file);
     });
@@ -124,7 +110,7 @@ if (contactForm) {
   contactForm.addEventListener('submit', e => {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type=submit]');
-    btn.textContent = 'Message Sent ✓';
+    btn.textContent = 'Message Sent';
     btn.style.background = 'var(--accent2)';
     btn.style.color = 'var(--bg)';
     setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background=''; btn.style.color=''; contactForm.reset(); }, 3000);
