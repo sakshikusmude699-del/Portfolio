@@ -1,87 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Skills — Sakshi Kusmude</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills & Toolkit — Sakshi Kusmude</title>
+  <meta name="description" content="Technical Skills, Certifications, and Active Learning Roadmap of Sakshi Kusmude — Data Engineer."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
-  <style>
-    .sg-icon { width: 30px; height: 30px; color: var(--accent); margin-bottom: 0.8rem; }
-    .sg-icon svg { width: 100%; height: 100%; }
-  </style>
+  <script>
+    (function() {
+      const t = localStorage.getItem('portfolio-theme') || 
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
+  <!-- NAV -->
   <nav class="nav" id="nav">
     <a href="index.html" class="nav-logo">SK<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">home</a></li>
-      <li><a href="about.html">about</a></li>
-      <li><a href="experience.html">experience</a></li>
-      <li><a href="projects.html">projects</a></li>
-      <li><a href="skills.html" class="active">skills</a></li>
-      <li><a href="gallery.html">gallery</a></li>
-      <li><a href="contact.html" class="nav-cta">contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    
+    <div class="nav-right-wrap">
+      <ul class="nav-links">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="experience.html">experience</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="skills.html" class="active">skills</a></li>
+        <li><a href="gallery.html">gallery</a></li>
+        <li><a href="contact.html" class="nav-cta">contact</a></li>
+      </ul>
+
+      <!-- Theme Switcher Button -->
+      <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <main class="page">
     <section class="section">
       <div class="container">
         <div class="section-label">04 — skills & certifications</div>
-        <h2 class="section-title">My <em>toolkit</em></h2>
+        <h2 class="section-title">Technical <em>toolkit</em></h2>
+        <p class="section-desc">
+          A battle-tested stack spanning core programming languages, modern distributed data infrastructure, cloud analytics warehouses, and continuous upskilling.
+        </p>
 
-        <!-- SKILLS GRID -->
+        <!-- CURRENTLY LEARNING SPOTLIGHT SECTION -->
+        <div style="margin-bottom: 4.5rem;">
+          <div class="sub-heading" style="color:var(--accent2);border-color:rgba(45,212,191,0.25);">
+            ⚡ Currently Learning & Active Upskilling
+          </div>
+          <div class="learning-grid">
+            <!-- Spark -->
+            <div class="learning-card fade-up">
+              <div class="learning-card-top">
+                <div class="learning-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <span class="learning-badge badge-active">In Progress</span>
+              </div>
+              <h3 class="learning-title">Apache Spark</h3>
+              <p class="learning-desc">
+                Building distributed computing muscle with PySpark, DataFrame operations, RDD fundamentals, memory caching policies, and Spark SQL query optimization.
+              </p>
+              <div class="learning-progress-wrap">
+                <div class="progress-meta">
+                  <span class="progress-label">Proficiency Roadmap</span>
+                  <span class="progress-val">40%</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-bar progress-bar-spark" style="width: 40%;" data-width="40%"></div>
+                </div>
+              </div>
+              <div class="learning-topics">
+                <span class="learning-topic-pill">PySpark</span>
+                <span class="learning-topic-pill">Spark SQL</span>
+                <span class="learning-topic-pill">DataFrame APIs</span>
+                <span class="learning-topic-pill">Partitioning</span>
+              </div>
+            </div>
+
+            <!-- Databricks -->
+            <div class="learning-card fade-up">
+              <div class="learning-card-top">
+                <div class="learning-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <span class="learning-badge badge-intermediate">Core Focus</span>
+              </div>
+              <h3 class="learning-title">Databricks</h3>
+              <p class="learning-desc">
+                Engineering modern Lakehouse architectures using Delta Lake (ACID transactions, time travel), Unity Catalog data governance, and automated notebook jobs.
+              </p>
+              <div class="learning-progress-wrap">
+                <div class="progress-meta">
+                  <span class="progress-label">Proficiency Roadmap</span>
+                  <span class="progress-val">60%</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-bar progress-bar-databricks" style="width: 60%;" data-width="60%"></div>
+                </div>
+              </div>
+              <div class="learning-topics">
+                <span class="learning-topic-pill">Delta Lake</span>
+                <span class="learning-topic-pill">Unity Catalog</span>
+                <span class="learning-topic-pill">Medallion Arch</span>
+                <span class="learning-topic-pill">DLT Pipelines</span>
+              </div>
+            </div>
+
+            <!-- GenAI -->
+            <div class="learning-card fade-up">
+              <div class="learning-card-top">
+                <div class="learning-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 1010 10H12V2z"/><path d="M12 12L2.1 12a10.05 10.05 0 009.9 10V12z"/></svg>
+                </div>
+                <span class="learning-badge badge-exploring">Prototyping</span>
+              </div>
+              <h3 class="learning-title">Generative AI & LLMs</h3>
+              <p class="learning-desc">
+                Applying Large Language Models to structured and unstructured data: Retrieval-Augmented Generation (RAG), vector database indexing, and LangChain agents.
+              </p>
+              <div class="learning-progress-wrap">
+                <div class="progress-meta">
+                  <span class="progress-label">Proficiency Roadmap</span>
+                  <span class="progress-val">30%</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-bar progress-bar-genai" style="width: 30%;" data-width="30%"></div>
+                </div>
+              </div>
+              <div class="learning-topics">
+                <span class="learning-topic-pill">RAG Systems</span>
+                <span class="learning-topic-pill">Vector DBs</span>
+                <span class="learning-topic-pill">LangChain</span>
+                <span class="learning-topic-pill">Embeddings</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TECHNICAL SKILLS GRID -->
+        <div class="sub-heading">Core Technical Proficiencies</div>
         <div class="skills-layout">
+          <!-- Languages -->
           <div class="skill-group fade-up">
-            <div class="sg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div>
-            <div class="sg-title">Languages</div>
+            <div class="sg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div class="sg-title">Programming Languages</div>
             <div class="skill-pills">
               <span class="skill-pill">Python</span>
-              <span class="skill-pill">Java</span>
               <span class="skill-pill">SQL</span>
+              <span class="skill-pill">Java</span>
               <span class="skill-pill">C++</span>
             </div>
           </div>
+
+          <!-- Data Engineering -->
           <div class="skill-group fade-up">
-            <div class="sg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
-            <div class="sg-title">Frameworks & Backend</div>
+            <div class="sg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <div class="sg-title">Data Engineering & Cloud</div>
             <div class="skill-pills">
-              <span class="skill-pill">Django</span>
+              <span class="skill-pill">Apache Airflow</span>
+              <span class="skill-pill">Snowflake</span>
+              <span class="skill-pill">Google Cloud Platform (GCP)</span>
+              <span class="skill-pill">ETL / ELT Pipelines</span>
+              <span class="skill-pill">DBT (Data Build Tool)</span>
+              <span class="skill-pill">MySQL</span>
+              <span class="skill-pill">PostgreSQL</span>
+              <span class="skill-pill">Docker</span>
+            </div>
+          </div>
+
+          <!-- Frameworks & Backend -->
+          <div class="skill-group fade-up">
+            <div class="sg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="sg-title">Frameworks & Libraries</div>
+            <div class="skill-pills">
               <span class="skill-pill">Flask</span>
+              <span class="skill-pill">Streamlit</span>
+              <span class="skill-pill">Pandas</span>
+              <span class="skill-pill">NumPy</span>
+              <span class="skill-pill">Scikit-Learn (NLP)</span>
               <span class="skill-pill">FastAPI</span>
             </div>
           </div>
+
+          <!-- Developer Tools -->
           <div class="skill-group fade-up">
-            <div class="sg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 18a4 4 0 010-8 5 5 0 019.9-1A4.5 4.5 0 0118.5 18H6z"/></svg></div>
-            <div class="sg-title">Databases & Cloud</div>
-            <div class="skill-pills">
-              <span class="skill-pill">Snowflake</span>
-              <span class="skill-pill">MySQL</span>
-              <span class="skill-pill">Google Cloud Platform</span>
+            <div class="sg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
             </div>
-          </div>
-          <div class="skill-group fade-up">
-            <div class="sg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.9 2.9l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.9-2.9l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.9-2.9l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.9 2.9l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg></div>
-            <div class="sg-title">Developer Tools</div>
+            <div class="sg-title">Developer & Agile Tools</div>
             <div class="skill-pills">
+              <span class="skill-pill">Git</span>
               <span class="skill-pill">GitHub</span>
               <span class="skill-pill">VS Code</span>
               <span class="skill-pill">Postman</span>
               <span class="skill-pill">Jupyter Notebook</span>
-              <span class="skill-pill">Apache Airflow</span>
+              <span class="skill-pill">Jira</span>
+              <span class="skill-pill">Linux / Bash</span>
             </div>
           </div>
         </div>
 
         <!-- CERTIFICATIONS -->
         <div class="certs-wrap">
-          <div class="sub-heading">Certifications</div>
+          <div class="sub-heading">Industry Certifications</div>
           <div class="certs-grid">
-
+            <!-- AWS Cloud -->
             <div class="cert-card fade-up">
-              <div class="cert-logo" style="background:#ff9900;color:#111;">AWS</div>
+              <div class="cert-logo aws">AWS</div>
               <div>
                 <p class="cert-name">AWS Academy Graduate</p>
                 <p class="cert-issuer">Amazon Web Services</p>
@@ -89,8 +231,9 @@
               </div>
             </div>
 
+            <!-- AWS ML -->
             <div class="cert-card fade-up">
-              <div class="cert-logo" style="background:#ff9900;color:#111;">AWS</div>
+              <div class="cert-logo aws">AWS</div>
               <div>
                 <p class="cert-name">AWS Academy Graduate</p>
                 <p class="cert-issuer">Amazon Web Services</p>
@@ -98,36 +241,13 @@
               </div>
             </div>
 
+            <!-- IBM Web -->
             <div class="cert-card fade-up">
               <div class="cert-logo ibm">IBM</div>
               <div>
                 <p class="cert-name">Introduction to Web Development</p>
-                <p class="cert-issuer">IBM</p>
-                <p class="cert-date">HTML, CSS & JavaScript</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- EDUCATION -->
-        <div class="certs-wrap">
-          <div class="sub-heading">Education</div>
-          <div class="edu-grid">
-            <div class="edu-card fade-up">
-              <div class="edu-year">Aug 2022 – May 2026</div>
-              <div class="edu-details">
-                <h4>B.Tech in Information Technology</h4>
-                <p>Vishwakarma Institute of Information Technology, Pune</p>
-                <span class="edu-score">CGPA: 8.48</span>
-              </div>
-            </div>
-            <div class="edu-card fade-up">
-              <div class="edu-year">Mar 2022</div>
-              <div class="edu-details">
-                <h4>HSC — Science</h4>
-                <p>Residential Junior College, Ahilya Nagar, Maharashtra</p>
-                <span class="edu-score">84.5%</span>
+                <p class="cert-issuer">IBM Professional Certification</p>
+                <p class="cert-date">Issued Certificate</p>
               </div>
             </div>
           </div>
@@ -137,9 +257,45 @@
     </section>
   </main>
 
+  <!-- SURPRISE EASTER EGG: FLOATING TERMINAL LAUNCHER -->
+  <button class="terminal-launcher-btn" id="terminalLauncher" title="Open Interactive CLI (Shortcut: Press ` or Ctrl+K)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+    Terminal (Press `)
+  </button>
+
+  <!-- CLI MODAL -->
+  <div class="terminal-modal-overlay" id="terminalModal">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="window-dots">
+          <span class="w-dot dot-red" id="termCloseBtn"></span>
+          <span class="w-dot dot-yellow"></span>
+          <span class="w-dot dot-green"></span>
+        </div>
+        <div class="terminal-title">sakshi@cloud-shell: ~ (bash)</div>
+        <div style="font-family:var(--mono);font-size:0.68rem;color:var(--text3);">Esc to close</div>
+      </div>
+      <div class="terminal-body" id="terminalBody">
+        <div class="term-line term-accent">Welcome to Sakshi Kusmude's Interactive Developer Terminal!</div>
+        <div class="term-line term-muted">Type <span class="term-green">learning</span> or <span class="term-green">skills</span> to view technical roadmap.</div>
+      </div>
+      <div style="padding:0.8rem 1.2rem;background:var(--surface);border-top:1px solid var(--border);">
+        <div class="term-input-row">
+          <span class="term-prompt">sakshi@cloud-shell:~$</span>
+          <input type="text" class="term-input" id="termInput" autocomplete="off" spellcheck="false" placeholder="Type a command (e.g., learning, skills)..."/>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="footer">
-    <p>Designed & built by <strong>Sakshi Kusmude</strong> &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/sakshi-kusmude-2bb57525a" target="_blank">LinkedIn</a></p>
+    <p>
+      Designed & built by <strong>Sakshi Kusmude</strong> &nbsp;·&nbsp; 2026 &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/sakshi-kusmude/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &nbsp;·&nbsp;
+      <a href="https://github.com/sakshikusmude699-del/Portfolio" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+    </p>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

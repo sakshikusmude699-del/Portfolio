@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery — Sakshi Kusmude</title>
+  <meta name="description" content="Moments, hackathons, college events, and life frames of Sakshi Kusmude."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
-  <style>
-    /* lightbox */
-    .lightbox { position: fixed; inset: 0; background: rgba(10,14,22,0.96); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; backdrop-filter: blur(10px); }
-    .lightbox.open { opacity: 1; pointer-events: all; }
-    .lightbox-img { max-width: 88vw; max-height: 85vh; border-radius: 10px; border: 1px solid var(--border2); box-shadow: var(--glow-strong); }
-    .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; font-family: var(--mono); font-size: 1.5rem; color: var(--text2); cursor: pointer; transition: color 0.2s; background: none; border: none; }
-    .lightbox-close:hover { color: var(--accent); }
-    .lightbox-caption { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 0.75rem; color: var(--text2); white-space: nowrap; }
-
-    /* gallery filters */
-    .gallery-filter { display: flex; gap: 0.6rem; margin-bottom: 2rem; flex-wrap: wrap; }
-  </style>
+  <script>
+    (function() {
+      const t = localStorage.getItem('portfolio-theme') || 
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
+  <!-- NAV -->
   <nav class="nav" id="nav">
     <a href="index.html" class="nav-logo">SK<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">home</a></li>
-      <li><a href="about.html">about</a></li>
-      <li><a href="experience.html">experience</a></li>
-      <li><a href="projects.html">projects</a></li>
-      <li><a href="skills.html">skills</a></li>
-      <li><a href="gallery.html" class="active">gallery</a></li>
-      <li><a href="contact.html" class="nav-cta">contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    
+    <div class="nav-right-wrap">
+      <ul class="nav-links">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="experience.html">experience</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="skills.html">skills</a></li>
+        <li><a href="gallery.html" class="active">gallery</a></li>
+        <li><a href="contact.html" class="nav-cta">contact</a></li>
+      </ul>
+
+      <!-- Theme Switcher Button -->
+      <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <main class="page">
@@ -39,93 +49,111 @@
       <div class="container">
         <div class="section-label">05 — gallery</div>
         <h2 class="section-title">Life in <em>frames</em></h2>
-        <p class="gallery-intro">A collection of moments from internships, college events, hackathons, and everyday life.</p>
+        <p class="gallery-intro">
+          A visual chronicle of milestones—from enterprise hackathons and Colgate internships to GeeksforGeeks competitions, community volunteering with NSS, and mountain treks across Maharashtra. Click any image to view in full resolution.
+        </p>
 
-        <!-- GALLERY GRID -->
+        <!-- GALLERY MASONRY GRID -->
         <div class="gallery-grid" id="galleryGrid">
-
-          <div class="gallery-item">
-            <img src="images/Interns Day at Colgate.jpeg" alt="Interns Day at Colgate" />
-            <div class="gallery-overlay"><span class="gallery-caption">Interns Day at Colgate</span></div>
+          <div class="gallery-item fade-up">
+            <img src="images/Interns Day at Colgate.jpeg" alt="Interns Day at Colgate Global Business Services" loading="lazy"/>
+            <div class="gallery-overlay"><span class="gallery-caption">Interns Day · Colgate Global Business Services</span></div>
           </div>
 
-          <div class="gallery-item">
-            <img src="images/Industry Project Visit.jpeg" alt="Industry Project Visit" />
-            <div class="gallery-overlay"><span class="gallery-caption">Industry Project Visit</span></div>
+          <div class="gallery-item fade-up">
+            <img src="images/Ignite Hackathon at colgate.jpeg" alt="Ignite Hackathon at Colgate" loading="lazy"/>
+            <div class="gallery-overlay"><span class="gallery-caption">Ignite Hackathon · Colgate</span></div>
           </div>
 
-          <div class="gallery-item">
-            <img src="images/GFG hackathon.jpeg" alt="GFG Hackathon" />
-            <div class="gallery-overlay"><span class="gallery-caption">GFG Hackathon</span></div>
+          <div class="gallery-item fade-up">
+            <img src="images/GFG hackathon.jpeg" alt="GeeksforGeeks Hackathon" loading="lazy"/>
+            <div class="gallery-overlay"><span class="gallery-caption">GeeksforGeeks Hackathon</span></div>
           </div>
 
-          <div class="gallery-item">
-            <img src="images/GFG hackathon at college.jpeg" alt="GFG Hackathon at College" />
-            <div class="gallery-overlay"><span class="gallery-caption">GFG Hackathon at College</span></div>
+          <div class="gallery-item fade-up">
+            <img src="images/GFG hackathon at college.jpeg" alt="GFG Hackathon at VIIT College" loading="lazy"/>
+            <div class="gallery-overlay"><span class="gallery-caption">GFG Hackathon · VIIT College</span></div>
           </div>
 
-          <div class="gallery-item">
-            <img src="images/GFG hackathon 1.jpeg" alt="GFG Hackathon Group" />
-            <div class="gallery-overlay"><span class="gallery-caption">GFG Hackathon Group</span></div>
+          <div class="gallery-item fade-up">
+            <img src="images/GFG hackathon 1.jpeg" alt="GFG Hackathon Team Collaboration" loading="lazy"/>
+            <div class="gallery-overlay"><span class="gallery-caption">GFG Hackathon Collaboration</span></div>
           </div>
 
-          <div class="gallery-item">
-            <img src="images/Ignite Hackathon at colgate.jpeg" alt="Ignite Hackathon at Colgate" />
-            <div class="gallery-overlay"><span class="gallery-caption">Ignite Hackathon at Colgate</span></div>
+          <div class="gallery-item fade-up">
+            <img src="images/Industry Project Visit.jpeg" alt="Industry Project Visit" loading="lazy"/>
+            <div class="gallery-overlay"><span class="gallery-caption">Industry Project Visit & Exposure</span></div>
           </div>
 
-          <div class="gallery-item">
-            <img src="images/NSS helpin to orphan childs to perform on stage.jpeg" alt="NSS Orphanage Event" />
-            <div class="gallery-overlay"><span class="gallery-caption">NSS Orphanage Event</span></div>
+          <div class="gallery-item fade-up">
+            <img src="images/NSS helpin to orphan childs to perform on stage.jpeg" alt="NSS Helping Orphan Children Perform on Stage" loading="lazy"/>
+            <div class="gallery-overlay"><span class="gallery-caption">NSS Volunteering · Supporting Orphan Children</span></div>
           </div>
 
-          <div class="gallery-item">
-            <img src="images/sinhgad Trek.jpeg" alt="Sinhgad Trek" />
-            <div class="gallery-overlay"><span class="gallery-caption">Sinhgad Trek</span></div>
+          <div class="gallery-item fade-up">
+            <img src="images/sinhgad Trek.jpeg" alt="Sinhgad Fort Trek" loading="lazy"/>
+            <div class="gallery-overlay"><span class="gallery-caption">Sinhgad Fort Trek · Pune</span></div>
           </div>
 
-          <div class="gallery-item">
-            <img src="images/Trekking Purandar.jpeg" alt="Trekking Purandar" />
-            <div class="gallery-overlay"><span class="gallery-caption">Trekking Purandar</span></div>
+          <div class="gallery-item fade-up">
+            <img src="images/Trekking Purandar.jpeg" alt="Purandar Fort Trekking" loading="lazy"/>
+            <div class="gallery-overlay"><span class="gallery-caption">Purandar Fort Summit Trek</span></div>
           </div>
-
         </div>
 
-        <p style="font-family:var(--mono);font-size:0.72rem;color:var(--text3);margin-top:2rem;text-align:center;">
-          Click any photo to view it in full-screen lightbox mode
+        <p style="font-family:var(--mono);font-size:0.75rem;color:var(--text3);margin-top:2.5rem;text-align:center;">
+          💡 Tip: Click on any photo above to open high-definition Lightbox mode.
         </p>
       </div>
     </section>
   </main>
 
-  <!-- LIGHTBOX -->
+  <!-- LIGHTBOX MODAL -->
   <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose">&times;</button>
-    <img class="lightbox-img" id="lightboxImg" src="" alt=""/>
-    <span class="lightbox-caption" id="lightboxCaption"></span>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged view"/>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <!-- SURPRISE EASTER EGG: FLOATING TERMINAL LAUNCHER -->
+  <button class="terminal-launcher-btn" id="terminalLauncher" title="Open Interactive CLI (Shortcut: Press ` or Ctrl+K)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+    Terminal (Press `)
+  </button>
+
+  <!-- CLI MODAL -->
+  <div class="terminal-modal-overlay" id="terminalModal">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="window-dots">
+          <span class="w-dot dot-red" id="termCloseBtn"></span>
+          <span class="w-dot dot-yellow"></span>
+          <span class="w-dot dot-green"></span>
+        </div>
+        <div class="terminal-title">sakshi@cloud-shell: ~ (bash)</div>
+        <div style="font-family:var(--mono);font-size:0.68rem;color:var(--text3);">Esc to close</div>
+      </div>
+      <div class="terminal-body" id="terminalBody">
+        <div class="term-line term-accent">Welcome to Sakshi Kusmude's Interactive Developer Terminal!</div>
+        <div class="term-line term-muted">Type <span class="term-green">help</span> to view available commands or try <span class="term-green">confetti</span>!</div>
+      </div>
+      <div style="padding:0.8rem 1.2rem;background:var(--surface);border-top:1px solid var(--border);">
+        <div class="term-input-row">
+          <span class="term-prompt">sakshi@cloud-shell:~$</span>
+          <input type="text" class="term-input" id="termInput" autocomplete="off" spellcheck="false" placeholder="Type a command (e.g., confetti, help)..."/>
+        </div>
+      </div>
+    </div>
   </div>
 
   <footer class="footer">
-    <p>Designed & built by <strong>Sakshi Kusmude</strong> &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; <a href="https://linkedin.com/in/sakshi-kusmude-2bb57525a" target="_blank">LinkedIn</a></p>
+    <p>
+      Designed & built by <strong>Sakshi Kusmude</strong> &nbsp;·&nbsp; 2026 &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/sakshi-kusmude/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &nbsp;·&nbsp;
+      <a href="https://github.com/sakshikusmude699-del/Portfolio" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+    </p>
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    // Lightbox
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lightboxImg');
-    const lbCaption = document.getElementById('lightboxCaption');
-    document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
-
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const img = item.querySelector('img');
-        if (img) { lbImg.src = img.src; lbCaption.textContent = img.alt || ''; lightbox.classList.add('open'); }
-      });
-    });
-
-
-  </script>
 </body>
 </html>

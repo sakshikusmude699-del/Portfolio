@@ -1,63 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Experience — Sakshi Kusmude</title>
+  <meta name="description" content="Experience of Sakshi Kusmude — Data Engineering Intern at Colgate Global Business Services, Data Science Intern at JAASN Consultants."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
+  <script>
+    (function() {
+      const t = localStorage.getItem('portfolio-theme') || 
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
+  <!-- NAV -->
   <nav class="nav" id="nav">
     <a href="index.html" class="nav-logo">SK<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">home</a></li>
-      <li><a href="about.html">about</a></li>
-      <li><a href="experience.html" class="active">experience</a></li>
-      <li><a href="projects.html">projects</a></li>
-      <li><a href="skills.html">skills</a></li>
-      <li><a href="gallery.html">gallery</a></li>
-      <li><a href="contact.html" class="nav-cta">contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    
+    <div class="nav-right-wrap">
+      <ul class="nav-links">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="experience.html" class="active">experience</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="skills.html">skills</a></li>
+        <li><a href="gallery.html">gallery</a></li>
+        <li><a href="contact.html" class="nav-cta">contact</a></li>
+      </ul>
+
+      <!-- Theme Switcher Button -->
+      <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <main class="page">
     <section class="section">
       <div class="container">
-        <div class="section-label">02 — experience</div>
+        <div class="section-label">02 — professional experience</div>
         <h2 class="section-title">Where I've <em>worked</em></h2>
-        <p class="section-desc">Two internships across data engineering and data science — building the foundations for scalable, production-grade data systems.</p>
+        <p class="section-desc">
+          Two impactful internships across enterprise data engineering and business analytics—building robust ELT workflows, optimizing production pipelines, and delivering data-driven business insights.
+        </p>
 
         <div class="timeline">
-
           <!-- Colgate -->
           <div class="timeline-item fade-up">
             <div class="timeline-dot"></div>
             <div class="timeline-card">
               <div class="timeline-header">
                 <div>
-                  <h3 class="job-title">Data Engineering Intern</h3>
+                  <h3 class="job-title">Data Engineer Intern</h3>
                   <p class="company">Colgate Global Business Services Pvt. Ltd.</p>
                 </div>
                 <div class="timeline-meta">
-                  <span class="period-tag">Jul 2025 – Jan 2026</span>
-                  <span class="loc-tag">Mumbai, Maharashtra · Hybrid</span>
+                  <span class="period-tag">July 2025 – Jan 2026</span>
+                  <span class="loc-tag">Mumbai, India · Hybrid</span>
                 </div>
               </div>
+
               <ul class="job-bullets">
-                <li>Developed <strong>ELT pipelines</strong> and automated workflows using Python and SQL to support enterprise-scale data and application systems</li>
-                <li>Built and maintained <strong>Apache Airflow DAGs</strong> to orchestrate backend jobs and improve system reliability and monitoring</li>
-                <li>Integrated <strong>cloud services (GCP, Snowflake)</strong> to enable secure data access and application-level processing</li>
-                <li>Worked closely with cross-functional teams to debug issues, improve performance, and support production deployments</li>
+                <li>
+                  Developed and maintained <strong>enterprise ELT pipelines</strong> using Python, SQL, Snowflake, DBT, and Google Cloud Platform (GCP) for reliable, large-scale enterprise data processing.
+                </li>
+                <li>
+                  <strong>Optimized a production ELT pipeline</strong> by automating a critical manual workflow, successfully cutting recurring weekend on-call effort and substantially improving overall operational efficiency.
+                </li>
+                <li>
+                  Built, scheduled, and monitored <strong>Apache Airflow DAGs</strong>, leveraging Git/GitHub for strict source code version control and Jira for agile sprint planning, bug tracking, and team collaboration.
+                </li>
+                <li>
+                  Implemented robust schema validation, transformations with DBT, and data staging into Snowflake data warehouse to support downstream analytical consumers.
+                </li>
               </ul>
+
               <div class="tech-tags">
-                <span>Python</span><span>SQL</span><span>Apache Airflow</span><span>Snowflake</span><span>Google Cloud Platform</span><span>ELT</span>
+                <span>Python</span>
+                <span>SQL</span>
+                <span>Snowflake</span>
+                <span>DBT</span>
+                <span>Apache Airflow</span>
+                <span>Google Cloud Platform (GCP)</span>
+                <span>ELT Pipelines</span>
+                <span>Git / GitHub</span>
+                <span>Jira</span>
               </div>
             </div>
           </div>
 
-          <!-- JAASN -->
+          <!-- JAASN Consultants -->
           <div class="timeline-item fade-up">
             <div class="timeline-dot"></div>
             <div class="timeline-card">
@@ -68,27 +109,77 @@
                 </div>
                 <div class="timeline-meta">
                   <span class="period-tag">Aug 2024 – Jan 2025</span>
-                  <span class="loc-tag">Pune, Maharashtra · Hybrid</span>
+                  <span class="loc-tag">Pune, India · Hybrid</span>
                 </div>
               </div>
+
               <ul class="job-bullets">
-                <li>Developed <strong>Python-based scripts</strong> and backend logic to process, analyze, and visualize business data</li>
-                <li>Collaborated with stakeholders to translate requirements into <strong>functional features and reports</strong></li>
+                <li>
+                  Developed <strong>Python-based scripts and backend logic</strong> to extract, clean, preprocess, and visualize complex business telemetry.
+                </li>
+                <li>
+                  Collaborated closely with business stakeholders and engineering leads to translate functional business requirements into automated analytical reports and actionable features.
+                </li>
+                <li>
+                  Conducted exploratory data analysis (EDA) and established automated reporting pipelines to monitor key operational performance metrics.
+                </li>
               </ul>
+
               <div class="tech-tags">
-                <span>Python</span><span>Data Analysis</span><span>Data Visualization</span><span>Business Analytics</span>
+                <span>Python</span>
+                <span>Data Analysis</span>
+                <span>Data Visualization</span>
+                <span>Backend Logic</span>
+                <span>Business Reporting</span>
+                <span>Pandas / NumPy</span>
               </div>
             </div>
           </div>
-
         </div>
+
       </div>
     </section>
   </main>
 
+  <!-- SURPRISE EASTER EGG: FLOATING TERMINAL LAUNCHER -->
+  <button class="terminal-launcher-btn" id="terminalLauncher" title="Open Interactive CLI (Shortcut: Press ` or Ctrl+K)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+    Terminal (Press `)
+  </button>
+
+  <!-- CLI MODAL -->
+  <div class="terminal-modal-overlay" id="terminalModal">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="window-dots">
+          <span class="w-dot dot-red" id="termCloseBtn"></span>
+          <span class="w-dot dot-yellow"></span>
+          <span class="w-dot dot-green"></span>
+        </div>
+        <div class="terminal-title">sakshi@cloud-shell: ~ (bash)</div>
+        <div style="font-family:var(--mono);font-size:0.68rem;color:var(--text3);">Esc to close</div>
+      </div>
+      <div class="terminal-body" id="terminalBody">
+        <div class="term-line term-accent">Welcome to Sakshi Kusmude's Interactive Developer Terminal!</div>
+        <div class="term-line term-muted">Type <span class="term-green">experience</span> or <span class="term-green">projects</span> to inspect technical highlights.</div>
+      </div>
+      <div style="padding:0.8rem 1.2rem;background:var(--surface);border-top:1px solid var(--border);">
+        <div class="term-input-row">
+          <span class="term-prompt">sakshi@cloud-shell:~$</span>
+          <input type="text" class="term-input" id="termInput" autocomplete="off" spellcheck="false" placeholder="Type a command (e.g., experience)..."/>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="footer">
-    <p>Designed & built by <strong>Sakshi Kusmude</strong> &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/sakshi-kusmude-2bb57525a" target="_blank">LinkedIn</a></p>
+    <p>
+      Designed & built by <strong>Sakshi Kusmude</strong> &nbsp;·&nbsp; 2026 &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/sakshi-kusmude/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &nbsp;·&nbsp;
+      <a href="https://github.com/sakshikusmude699-del/Portfolio" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+    </p>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
